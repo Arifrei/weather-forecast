@@ -21,8 +21,8 @@ feels_like = [c_to_f(int(item.text)) for item in bs.select(".b-forecast__table-f
 info = list(zip(descriptions, high_temps, low_temps, feels_like))
 am, pm, night = info
 
-sender_email = "freilicharon@gmail.com"
-recipient_email = "aronfreilich64@gmail.com"
+sender_email = os.getenv("EMAIL_ADDRESS")
+recipient_email = os.getenv("RECIPIENT_EMAIL")
 app_password = os.getenv("EMAIL_PASSWORD")
 
 date = datetime.today().strftime("%A %B %d").lstrip("0").replace(" 0", " ")
